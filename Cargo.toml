@@ -1,0 +1,12 @@
+[package]
+name = "rust-no_std"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+heapless = "0.8.0"
+libc = { version = "0.2.169", default-features = false }
+
+[profile.dev]
+panic = "abort"
+opt-level = 3
