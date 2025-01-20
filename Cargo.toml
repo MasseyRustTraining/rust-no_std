@@ -7,12 +7,15 @@ edition = "2021"
 heapless = "0.8.0"
 libc = { version = "0.2.169", default-features = false }
 
+[dependencies.personality]
+version = "0.1.0"
+git = "https://github.com/BartMassey/personality"
+
 [profile.dev]
 panic = "abort"
 codegen-units = 1
 incremental = false
 lto = false
-#opt-level = 3
 
 [profile.release]
 panic = "abort"
