@@ -9,4 +9,10 @@ libc = { version = "0.2.169", default-features = false }
 
 [profile.dev]
 panic = "abort"
-opt-level = 3
+codegen-units = 1
+incremental = false
+lto = false
+#opt-level = 3
+
+[profile.release]
+panic = "abort"

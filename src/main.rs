@@ -1,10 +1,17 @@
 #![no_std]
 #![no_main]
+#![allow(internal_features)]
+#![feature(lang_items)]
 
 use heapless::String;
 
 #[panic_handler]
 fn panic_handler(_: &core::panic::PanicInfo) -> ! {
+    unsafe { libc::abort() }
+}
+
+#[lang = "eh_personality"]
+extern "C" fn rust_eh_personality() {
     unsafe { libc::abort() }
 }
 
